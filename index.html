@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <!-- Basic -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>Schneiderei Bodensee – Änderungsschneiderei & Mobiler Service in Konstanz</title>
+    <meta name="description"
+          content="Schneiderei Bodensee bietet professionelle Änderungen, Maßanfertigungen und mobilen Vor-Ort-Service für Privat- und Geschäftskunden im Raum Bodensee, Konstanz und angrenzende Schweiz." />
+    <meta name="keywords"
+          content="Änderungsschneiderei, Schneiderei, Bodensee, Konstanz, Kleidung ändern, Maßanfertigung, mobiler Nähservice, Vor-Ort-Schneiderei, Schweiz, Textilreparatur" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://www.schneidereibodensee.de" />
+    <meta property="og:title"       content="Schneiderei Bodensee – Änderungsschneiderei & Mobiler Service in Konstanz" />
+    <meta property="og:description"
+          content="Änderungen, Maßarbeit und mobiler Schneidereiservice im Kreis Bodensee – Wir kommen zu Ihnen nach Hause oder ins Geschäft!" />
+    <meta property="og:image"
+          content="https://schneidereibodensee.de/images/logo_schneiderei_bodensee.webp" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Schneiderei Bodensee – Änderungsschneiderei & Mobiler Service in Konstanz" />
+    <meta name="twitter:description"
+          content="Änderungen, Reparaturen & Maßanfertigungen – jetzt Termin buchen: +49 176 81085285" />
+    <meta name="twitter:image"
+          content="https://schneidereibodensee.de/images/logo_schneiderei_bodensee.webp" />
+
+    <!-- Tailwind (only CDN, no build-step) -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+          href="https://schneidereibodensee.de/images/favicon.ico" />
+
+    <!-- Custom utilities -->
+    <style>
+        body { font-family: 'Work Sans', sans-serif; }
+
+        /* mobile nav toggle */
+        #menu-toggle:checked + #menu { display:block; }
+
+        /* gallery hover */
+        .hover\:grow        { transition:transform .3s; transform:scale(1); }
+        .hover\:grow:hover  { transform:scale(1.02); }
+
+        /* carousel */
+        .carousel-open:checked + .carousel-item { position:static; opacity:100; }
+        .carousel-item          { transition:opacity .6s ease-out; }
+
+        /* responsive map */
+        .map-responsive{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;}
+        .map-responsive iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+
+        /* modal */
+        #imageModal{z-index:10000;}
+        footer     {z-index:1;}
+
+        .modal-arrow{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2rem;
+                     background:rgba(0,0,0,.5);padding:.5rem;cursor:pointer;}
+        .modal-arrow.left  {left:1rem;}
+        .modal-arrow.right {right:1rem;}
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type"    : "LocalBusiness",
+      "name"     : "Schneiderei Bodensee",
+      "image"    : "https://schneidereibodensee.de/images/logo_schneiderei_bodensee.png",
+      "@id"      : "https://www.schneidereibodensee.de",
+      "url"      : "https://www.schneidereibodensee.de",
+      "telephone": "+49 176 81085285",
+      "address"  : {
+        "@type"           : "PostalAddress",
+        "streetAddress"   : "Reichenaustraße 81c",
+        "addressLocality" : "Konstanz",
+        "postalCode"      : "78467",
+        "addressCountry"  : "DE"
+      },
+      "openingHours": "Mo-Fr 09:00-17:00",
+      "geo": { "@type":"GeoCoordinates", "latitude":47.6779, "longitude":9.1721 },
+      "description":
+        "Mobile Änderungsschneiderei, Maßanfertigungen und Textilreparaturen im Raum Bodensee und Schweiz.",
+      "priceRange": "$$"
+    }
+    </script>
+</head>
+
+<body class="bg-white text-gray-700 leading-normal tracking-normal">
+
+<!-- Navigation -->
+<nav id="header" class="w-full z-30 top-0 py-1">
+  <div class="container mx-auto flex flex-wrap items-center justify-between px-6 py-3">
+    <!-- logo -->
+    <a href="#" class="flex items-center font-bold text-gray-900 text-xl">
+      <img src="https://schneidereibodensee.de/images/logo_schneiderei_bodensee.png"
+           alt="Logo Schneiderei Bodensee" class="h-8 mr-2" />
+      Schneiderei Bodensee
+    </a>
+
+    <!-- mobile btn -->
+    <label for="menu-toggle" class="cursor-pointer md:hidden block">
+      <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg"
+           width="20" height="20" viewBox="0 0 20 20">
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+      </svg>
+    </label>
+    <input class="hidden" type="checkbox" id="menu-toggle" />
+
+    <!-- nav links -->
+    <div id="menu" class="hidden md:flex md:items-center w-full md:w-auto">
+      <ul class="md:flex items-center text-base md:pt-0 pt-4">
+        <li><a class="px-4 py-2 hover:text-black" href="#leistungen">Leistungen</a></li>
+        <li><a class="px-4 py-2 hover:text-black" href="#galerie">Galerie</a></li>
+        <li><a class="px-4 py-2 hover:text-black" href="#kontakt">Kontakt</a></li>
+        <li><a class="px-4 py-2 hover:text-black" href="#ueber-uns">Über uns</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Carousel -->
+<div class="carousel relative container mx-auto" style="max-width:1600px;">
+  <div class="carousel-inner relative overflow-hidden w-full">
+    <!-- Slide 1 -->
+    <input class="carousel-open" type="radio" id="carousel-1" name="carousel" hidden checked>
+    <div class="carousel-item absolute opacity-0" style="height:80vh;">
+      <div class="flex items-center justify-center h-full w-full bg-cover bg-center"
+           style="background-image:url('https://schneidereibodensee.de/images/slider_01.jpg');">
+        <div class="bg-black bg-opacity-50 p-8 rounded-lg text-center">
+          <h1 class="text-white font-bold text-3xl md:text-4xl mb-4">
+            Mobile Änderungsschneiderei am Bodensee
+          </h1>
+          <a href="tel:+4917681085285" class="text-yellow-400 text-xl font-semibold mb-4 inline-block">
+            <span style="color:red;">☎</span> +49 176 81085285
+          </a>
+          <p class="text-white text-lg md:text-xl">
+            Wir kommen zu Ihnen – Änderungen, Reparaturen & Maßanfertigungen vor Ort
+          </p>
+          <a href="mailto:sattlerei.lisovaya@gmail.com"
+             class="text-yellow-400 font-bold text-lg mt-4 inline-block">
+             info@schneidereibodensee.de
+          </a>
+          <p class="text-white text-lg mt-2">
+            Reichenaustraße 81c, 78467 Konstanz
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <input class="carousel-open" type="radio" id="carousel-2" name="carousel" hidden>
+    <div class="carousel-item absolute opacity-0" style="height:80vh;">
+      <div class="flex items-center justify-center h-full w-full bg-cover bg-center"
+           style="background-image:url('https://schneidereibodensee.de/images/slider_02.jpg');">
+        <div class="bg-black bg-opacity-50 p-8 rounded-lg text-center">
+          <h1 class="text-white font-bold text-2xl md:text-3xl">
+            Maßarbeit & Design<br/>
+            Kleider, Anzüge, Heimtextilien
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Leistungen -->
+<section id="leistungen" class="bg-white py-12">
+  <div class="container mx-auto px-6">
+    <h2 class="text-gray-900 font-bold text-3xl mb-8 text-center">Leistungen</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Änderung -->
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+        <div class="flex items-center mb-4">
+          <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-6-6l2-2a2 2 0 012.828 0L20 12" />
+          </svg>
+          <h3 class="text-xl font-semibold text-gray-800">Änderungen</h3>
+        </div>
+        <p class="text-gray-700">Schnelle Änderungen an Kleidern, Hosen, Röcken, Jacken …</p>
+      </div>
+      <!-- Maßanfertigung -->
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+        <div class="flex items-center mb-4">
+          <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 21V8a2 2 0 012-2h2a2 2 0 012 2v13" />
+          </svg>
+          <h3 class="text-xl font-semibold text-gray-800">Maßanfertigungen</h3>
+        </div>
+        <p class="text-gray-700">Einzelstücke nach Maß – von Business-Anzug bis Abendkleid.</p>
+      </div>
+      <!-- Mobiler Service -->
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+        <div class="flex items-center mb-4">
+          <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 17l6-6 4 4L21 7" />
+          </svg>
+          <h3 class="text-xl font-semibold text-gray-800">Mobiler Vor-Ort-Service</h3>
+        </div>
+        <p class="text-gray-700">Wir holen, ändern und liefern – bequem bei Ihnen zuhause oder im Büro.</p>
+      </div>
+      <!-- Reparaturen -->
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+        <div class="flex items-center mb-4">
+          <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15.232 5.232l3.536 3.536m-2.036-1.5a3 3 0 11-4.242 4.242L5 21l-3-3 7.536-7.536a3 3 0 014.242-4.242z" />
+          </svg>
+          <h3 class="text-xl font-semibold text-gray-800">Reparaturen</h3>
+        </div>
+        <p class="text-gray-700">Reißverschlüsse, Futter, Knöpfe – fachgerecht erneuert.</p>
+      </div>
+      <!-- Heimtextilien -->
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+        <div class="flex items-center mb-4">
+          <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 7h18M3 12h18M3 17h18" />
+          </svg>
+          <h3 class="text-xl font-semibold text-gray-800">Gardinen & Dekostoffe</h3>
+        </div>
+        <p class="text-gray-700">Vorhänge kürzen / nähen, Kissen & Deko nach Wunsch.</p>
+      </div>
+      <!-- Lederarbeiten -->
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+        <div class="flex items-center mb-4">
+          <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 7h10M7 12h4m1 9l-5-5 5-5" />
+          </svg>
+          <h3 class="text-xl font-semibold text-gray-800">Lederarbeiten</h3>
+        </div>
+        <p class="text-gray-700">Lederjacken, Taschen & Motorradkleidung passgenau repariert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Galerie -->
+<section id="galerie" class="bg-white py-12">
+  <div class="container mx-auto">
+    <h2 class="text-gray-900 font-bold text-3xl mb-8 text-center">Galerie</h2>
+    <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- example images – replace with your own -->
+      <div class="bg-gray-100 p-2">
+        <img data-index="0" src="https://schneidereibodensee.de/images/galerie_01.jpg"
+             alt="Kleideränderung" class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer"
+             onclick="toggleModal(this)" />
+      </div>
+      <div class="bg-gray-100 p-2">
+        <img data-index="1" src="https://schneidereibodensee.de/images/galerie_02.jpg"
+             alt="Maßgeschneiderter Anzug" class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer"
+             onclick="toggleModal(this)" />
+      </div>
+      <div class="bg-gray-100 p-2">
+        <img data-index="2" src="https://schneidereibodensee.de/images/galerie_03.jpg"
+             alt="Gardinen nach Maß" class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer"
+             onclick="toggleModal(this)" />
+      </div>
+      <div class="bg-gray-100 p-2">
+        <img data-index="3" src="https://schneidereibodensee.de/images/galerie_04.jpg"
+             alt="Mobile Nähstation" class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer"
+             onclick="toggleModal(this)" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden">
+    <span class="absolute top-0 right-0 p-4 text-white text-2xl cursor-pointer" onclick="closeModal()">&times;</span>
+    <div class="modal-arrow left"  onclick="prevImage()">&#10094;</div>
+    <img id="modalImage" class="max-w-full max-h-full cursor-pointer" alt="Galeriebild" onclick="closeModal()" />
+    <div class="modal-arrow right" onclick="nextImage()">&#10095;</div>
+  </div>
+</section>
+
+<!-- Kontakt & Map -->
+<section id="kontakt" class="bg-white py-12">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:space-x-8">
+      <!-- Image -->
+      <div class="w-full md:w-1/2 mb-8 md:mb-0">
+        <img src="https://schneidereibodensee.de/images/team.jpg"
+             alt="Schneiderei Bodensee Team" class="hover:grow hover:shadow-lg w-full h-auto cursor-pointer object-cover"
+             onclick="toggleModal(this)" data-index="0" />
+      </div>
+      <!-- Map + Info -->
+      <div class="w-full md:w-1/2">
+        <div class="map-responsive">
+          <iframe title="Google Maps" loading="lazy"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d85912.95164965824!2d8.963385918057037!3d47.708113655929516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479af731e99596e3%3A0x89c4e456f9a28e9!2sSchneiderei%20Bodensee!5e0!3m2!1sde!2sde!4v1724853707339"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="mt-8 text-center md:text-left">
+          <h2 class="text-gray-900 font-bold text-3xl mb-4">Kontakt</h2>
+          <p class="text-gray-700 mb-1"><strong>Inh. Yulia Lisovaya</strong></p>
+          <p class="text-gray-700 mb-1">
+            <a href="mailto:info@schneidereibodensee.de" class="text-blue-500">info@schneidereibodensee.de</a>
+          </p>
+          <p class="text-gray-700 mb-1">Reichenaustraße 81c, 78467 Konstanz</p>
+          <p class="text-gray-700">
+            <a href="tel:+4917681085285" class="text-blue-500">+49 176 81085285</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/4917681085285"
+   class="fixed bottom-5 right-5 bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg"
+   aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="currentColor">
+    <path d="M16 2.094c-7.73 0-14 6.27-14 14 0 2.478.648 4.822 1.782 6.88L2 30l7.297-1.755A13.914 13.914 0 0016 30.906c7.73 0 14-6.27 14-14s-6.27-14-14-14zm0 1.812c6.723 0 12.188 5.465 12.188 12.188 0 6.723-5.465 12.188-12.188 12.188-2.309 0-4.472-.64-6.338-1.758l-.445-.27-4.34 1.045 1.117-4.274-.29-.464A12.148 12.148 0 013.813 16c0-6.723 5.465-12.188 12.188-12.188zm-2.168 4.719a4.65 4.65 0 00-2.04.99c-.486.648-1.29 1.727-1.29 4.13 0 2.403 1.545 4.73 1.76 5.058.215.328 2.545 4.06 6.262 5.538 3.09 1.208 3.72.97 4.385.91.665-.058 2.186-.89 2.494-1.748a4.656 4.656 0 00.217-1.748c-.093-.15-.342-.245-.715-.428-.373-.183-2.186-1.078-2.527-1.198a1.058 1.058 0 00-.837.186c-.248.37-.965 1.198-1.184 1.447-.218.25-.434.28-.808.093-.374-.186-1.57-.578-2.993-1.844-1.107-.986-1.852-2.206-2.068-2.58a1.047 1.047 0 01.162-.743c.165-.163.372-.43.558-.65.185-.216.248-.37.372-.618.124-.25.062-.465-.03-.65-.093-.186-.808-1.93-1.13-2.724a4.665 4.665 0 00-.838-.75z"/>
+  </svg>
+</a>
+
+<!-- Über uns -->
+<section id="ueber-uns" class="bg-white py-12">
+  <div class="container mx-auto px-6">
+    <h2 class="text-gray-800 font-bold text-2xl mb-8">Über uns</h2>
+    <p class="mb-6">
+      Schneiderei Bodensee ist Ihre mobile und stationäre Änderungsschneiderei in Konstanz.
+      Mit über 15 Jahren Erfahrung verbinden wir traditionelle Handwerkskunst mit modernem
+      Service. Wir holen Ihre Textilien ab, ändern oder fertigen neu und liefern
+      bequem zu Ihnen nach Hause – auch in die nahegelegene Schweiz.
+    </p>
+    <p>
+      Ob feine Abendgarderobe, Business-Outfits, Heimtextilien oder Premium-Lederarbeiten:
+      Wir erfüllen Ihre Wünsche präzise, schnell und zuverlässig. Probieren Sie uns aus!
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="container mx-auto bg-white py-8 border-t border-gray-400">
+  <div class="container flex flex-wrap px-3">
+    <div class="w-full lg:w-1/2">
+      <h3 class="font-bold text-gray-900 mb-4">
+        Änderungsschneiderei &amp; Mobiler Service Bodensee
+      </h3>
+      <p class="text-gray-700 text-sm">
+        Maßanfertigungen, Änderungen, Textilreparatur, mobiler Schneiderservice im Kreis Bodensee
+        und angrenzender Schweiz (Kreuzlingen, Arbon, Romanshorn, Stein am Rhein) – kontaktieren
+        Sie uns für ein unverbindliches Angebot.
+      </p>
+    </div>
+
+    <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-end mt-6 lg:mt-0">
+      <a href="#leistungen" class="text-gray-600 hover:text-gray-900 mb-2">Leistungen</a>
+      <a href="#galerie"    class="text-gray-600 hover:text-gray-900 mb-2">Galerie</a>
+      <a href="#kontakt"    class="text-gray-600 hover:text-gray-900 mb-2">Kontakt</a>
+      <a href="#ueber-uns"  class="text-gray-600 hover:text-gray-900 mb-2">Über uns</a>
+      <a href="https://schneidereibodensee.de/datenschutz.html"
+         class="text-gray-600 hover:text-gray-900 mb-2">Datenschutz</a>
+      <a href="https://schneidereibodensee.de/impressum.html"
+         class="text-gray-600 hover:text-gray-900">Impressum</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal Scripts -->
+<script>
+let currentIndex=0,images=[];
+document.addEventListener('DOMContentLoaded',()=>{images=[...document.querySelectorAll('#gallery img')]});
+
+function openModal(img){const modal=document.getElementById('imageModal'),
+modalImg=document.getElementById('modalImage');currentIndex=parseInt(img.dataset.index);
+modalImg.src=img.src;modal.classList.remove('hidden');document.addEventListener('keydown',handleKey);}
+function closeModal(){document.getElementById('imageModal').classList.add('hidden');
+document.removeEventListener('keydown',handleKey);}
+function handleKey(e){if(e.key==='Escape')closeModal();else if(e.key==='ArrowRight')nextImage();
+else if(e.key==='ArrowLeft')prevImage();}
+function nextImage(){currentIndex=(currentIndex+1)%images.length;
+document.getElementById('modalImage').src=images[currentIndex].src;}
+function prevImage(){currentIndex=(currentIndex-1+images.length)%images.length;
+document.getElementById('modalImage').src=images[currentIndex].src;}
+function toggleModal(img){const modal=document.getElementById('imageModal');
+modal.classList.contains('hidden')?openModal(img):closeModal();}
+document.getElementById('imageModal').addEventListener('click',e=>{
+if(e.target===e.currentTarget||e.target.id==='modalImage')closeModal();});
+</script>
+
+</body>
+</html>
