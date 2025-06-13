@@ -1,0 +1,5 @@
+# robots.txt – Schneiderei Bodensee
+User-agent: *
+Disallow:
+
+Sitemap: https://schneidereibodensee.de/sitemap.xml
