@@ -1,370 +1,279 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <!-- Basic -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO -->
-    <title>Schneiderei Bodensee – Änderungsschneiderei & Mobiler Service in Konstanz</title>
-    <meta name="description"
-          content="Schneiderei Bodensee bietet professionelle Änderungen, Maßanfertigungen und mobilen Vor-Ort-Service für Privat- und Geschäftskunden im Raum Bodensee, Konstanz und angrenzende Schweiz." />
-    <meta name="keywords"
-          content="Änderungsschneiderei, Schneiderei, Bodensee, Konstanz, Kleidung ändern, Maßanfertigung, mobiler Nähservice, Vor-Ort-Schneiderei, Schweiz, Textilreparatur" />
+    <!-- SEO Meta Tags -->
+    <title>Schneiderei Bodensee – Änderungsschneiderei &amp; Maßanfertigungen in Konstanz</title>
+    <meta name="description" content="Schneiderei Bodensee bietet mobile Änderungen, Maßanfertigungen und Textil-Reparaturen für Privat- und Geschäftskunden in Konstanz am Bodensee sowie der angrenzenden Schweiz.">
+    <meta name="keywords" content="Schneiderei, Änderungsschneiderei, Bodensee, Konstanz, Textilreparatur, Maßanfertigung, mobiler Schneiderservice, Kleid ändern, Anzug nähen, Heimtextilien, Lederreparatur">
 
-    <!-- Open Graph -->
-    <meta property="og:type"        content="website" />
-    <meta property="og:url"         content="https://www.schneidereibodensee.de" />
-    <meta property="og:title"       content="Schneiderei Bodensee – Änderungsschneiderei & Mobiler Service in Konstanz" />
-    <meta property="og:description"
-          content="Änderungen, Maßarbeit und mobiler Schneidereiservice im Kreis Bodensee – Wir kommen zu Ihnen nach Hause oder ins Geschäft!" />
-    <meta property="og:image"
-          content="https://schneidereibodensee.de/images/logo_schneiderei_bodensee.webp" />
+    <!-- Open-Graph -->
+    <meta property="og:title" content="Schneiderei Bodensee – Änderungsschneiderei &amp; Mobiler Service in Konstanz">
+    <meta property="og:description" content="Änderungen, Maßarbeit &amp; mobiler Vor-Ort-Service – wir kommen zu Ihnen nach Hause oder ins Büro!">
+    <meta property="og:image" content="https://schneidereibodensee.de/images/logo_schneiderei_bodensee.webp">
+    <meta property="og:url" content="https://www.schneidereibodensee.de">
+    <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card"        content="summary_large_image" />
-    <meta name="twitter:title"       content="Schneiderei Bodensee – Änderungsschneiderei & Mobiler Service in Konstanz" />
-    <meta name="twitter:description"
-          content="Änderungen, Reparaturen & Maßanfertigungen – jetzt Termin buchen: +49 176 81085285" />
-    <meta name="twitter:image"
-          content="https://schneidereibodensee.de/images/logo_schneiderei_bodensee.webp" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Schneiderei Bodensee – Änderungsschneiderei &amp; Mobiler Service in Konstanz">
+    <meta name="twitter:description" content="Änderungen, Reparaturen &amp; Maßanfertigungen – einfach Termin vereinbaren: +49 176 81085285">
+    <meta name="twitter:image" content="https://schneidereibodensee.de/images/logo_schneiderei_bodensee.webp">
 
-    <!-- Tailwind (only CDN, no build-step) -->
-    <link rel="stylesheet"
-          href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <!-- Tailwind (CDN) -->
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon"
-          href="https://schneidereibodensee.de/images/favicon.ico" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <!-- Custom utilities -->
+    <!-- Custom Styles (wie bei polstereibodensee.de) -->
     <style>
-        body { font-family: 'Work Sans', sans-serif; }
-
-        /* mobile nav toggle */
-        #menu-toggle:checked + #menu { display:block; }
-
-        /* gallery hover */
-        .hover\:grow        { transition:transform .3s; transform:scale(1); }
-        .hover\:grow:hover  { transform:scale(1.02); }
-
-        /* carousel */
-        .carousel-open:checked + .carousel-item { position:static; opacity:100; }
-        .carousel-item          { transition:opacity .6s ease-out; }
-
-        /* responsive map */
-        .map-responsive{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;}
-        .map-responsive iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
-
-        /* modal */
-        #imageModal{z-index:10000;}
-        footer     {z-index:1;}
-
-        .modal-arrow{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2rem;
-                     background:rgba(0,0,0,.5);padding:.5rem;cursor:pointer;}
-        .modal-arrow.left  {left:1rem;}
-        .modal-arrow.right {right:1rem;}
+        body{font-family:'Work Sans',sans-serif}
+        #menu-toggle:checked+#menu{display:block}
+        .hover\:grow{transition:transform .3s;transform:scale(1)}
+        .hover\:grow:hover{transform:scale(1.02)}
+        .map-responsive{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden}
+        .map-responsive iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+        #imageModal{z-index:10000}
+        footer{z-index:1}
+        .modal-arrow{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2rem;background:rgba(0,0,0,.5);padding:.5rem;cursor:pointer}
+        .modal-arrow.left{left:1rem}.modal-arrow.right{right:1rem}
+        /* Cookie Banner */
+        #cookieConsent{position:fixed;bottom:0;width:100%;background:rgba(0,0,0,.8);color:#fff;padding:15px;text-align:center;z-index:10000;display:none}
+        #cookieConsent button{background:#fbbf24;color:#000;padding:8px 16px;margin-left:15px;border:none;cursor:pointer;font-weight:bold;border-radius:5px}
     </style>
 
-    <!-- Structured Data -->
+    <!-- schema.org / JSON-LD -->
     <script type="application/ld+json">
     {
-      "@context" : "https://schema.org",
-      "@type"    : "LocalBusiness",
-      "name"     : "Schneiderei Bodensee",
-      "image"    : "https://schneidereibodensee.de/images/logo_schneiderei_bodensee.png",
-      "@id"      : "https://www.schneidereibodensee.de",
-      "url"      : "https://www.schneidereibodensee.de",
-      "telephone": "+49 176 81085285",
-      "address"  : {
-        "@type"           : "PostalAddress",
-        "streetAddress"   : "Reichenaustraße 81c",
-        "addressLocality" : "Konstanz",
-        "postalCode"      : "78467",
-        "addressCountry"  : "DE"
+      "@context":"https://schema.org",
+      "@type":"LocalBusiness",
+      "name":"Schneiderei Bodensee",
+      "image":"https://schneidereibodensee.de/images/logo_schneiderei_bodensee.webp",
+      "@id":"https://www.schneidereibodensee.de",
+      "url":"https://www.schneidereibodensee.de",
+      "telephone":"+49 176 81085285",
+      "email":"mailto:sattlerei.lisovaya@gmail.com",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Reichenaustraße 81c",
+        "addressLocality":"Konstanz",
+        "postalCode":"78467",
+        "addressCountry":"DE"
       },
-      "openingHours": "Mo-Fr 09:00-17:00",
-      "geo": { "@type":"GeoCoordinates", "latitude":47.6779, "longitude":9.1721 },
-      "description":
-        "Mobile Änderungsschneiderei, Maßanfertigungen und Textilreparaturen im Raum Bodensee und Schweiz.",
-      "priceRange": "$$"
+      "geo":{"@type":"GeoCoordinates","latitude":47.6779,"longitude":9.1721},
+      "openingHours":"Mo-Fr 09:00-17:00",
+      "description":"Mobile Änderungsschneiderei, Maßanfertigungen und Textilreparaturen im Raum Bodensee / Schweiz.",
+      "priceRange":"$$",
+      "sameAs":[
+        "https://www.instagram.com/yulia_lisovaya/",
+        "https://www.facebook.com/julia.lisovaya.3"
+      ]
     }
     </script>
 </head>
 
-<body class="bg-white text-gray-700 leading-normal tracking-normal">
+<body class="bg-white text-gray-600 leading-normal tracking-normal">
 
 <!-- Navigation -->
 <nav id="header" class="w-full z-30 top-0 py-1">
-  <div class="container mx-auto flex flex-wrap items-center justify-between px-6 py-3">
-    <!-- logo -->
-    <a href="#" class="flex items-center font-bold text-gray-900 text-xl">
-      <img src="https://schneidereibodensee.de/images/logo_schneiderei_bodensee.png"
-           alt="Logo Schneiderei Bodensee" class="h-8 mr-2" />
-      Schneiderei Bodensee
-    </a>
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between px-6 py-3">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <a class="flex items-center font-bold text-gray-800 text-xl" href="#">
+                <img src="images/logo_schneiderei_bodensee.png" alt="Logo Schneiderei Bodensee" class="h-8 mr-2">
+                Schneiderei Bodensee
+            </a>
+        </div>
 
-    <!-- mobile btn -->
-    <label for="menu-toggle" class="cursor-pointer md:hidden block">
-      <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg"
-           width="20" height="20" viewBox="0 0 20 20">
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-      </svg>
-    </label>
-    <input class="hidden" type="checkbox" id="menu-toggle" />
+        <!-- Mobile Burger -->
+        <label for="menu-toggle" class="cursor-pointer md:hidden block">
+            <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+            </svg>
+        </label>
+        <input class="hidden" type="checkbox" id="menu-toggle">
 
-    <!-- nav links -->
-    <div id="menu" class="hidden md:flex md:items-center w-full md:w-auto">
-      <ul class="md:flex items-center text-base md:pt-0 pt-4">
-        <li><a class="px-4 py-2 hover:text-black" href="#leistungen">Leistungen</a></li>
-        <li><a class="px-4 py-2 hover:text-black" href="#galerie">Galerie</a></li>
-        <li><a class="px-4 py-2 hover:text-black" href="#kontakt">Kontakt</a></li>
-        <li><a class="px-4 py-2 hover:text-black" href="#ueber-uns">Über uns</a></li>
-      </ul>
+        <!-- Links -->
+        <div id="menu" class="hidden md:flex md:items-center md:w-auto w-full">
+            <ul class="md:flex items-center text-base text-gray-700 pt-4 md:pt-0">
+                <li><a class="inline-block no-underline hover:text-black px-4 py-2" href="#leistungen">Leistungen</a></li>
+                <li><a class="inline-block no-underline hover:text-black px-4 py-2" href="#galerie">Galerie</a></li>
+                <li><a class="inline-block no-underline hover:text-black px-4 py-2" href="#kontakt">Kontakt</a></li>
+                <li><a class="inline-block no-underline hover:text-black px-4 py-2" href="#ueber-uns">Über uns</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
-<!-- Carousel -->
-<div class="carousel relative container mx-auto" style="max-width:1600px;">
-  <div class="carousel-inner relative overflow-hidden w-full">
-    <!-- Slide 1 -->
-    <input class="carousel-open" type="radio" id="carousel-1" name="carousel" hidden checked>
-    <div class="carousel-item absolute opacity-0" style="height:80vh;">
-      <div class="flex items-center justify-center h-full w-full bg-cover bg-center"
-           style="background-image:url('https://schneidereibodensee.de/images/slider_01.jpg');">
-        <div class="bg-black bg-opacity-50 p-8 rounded-lg text-center">
-          <h1 class="text-white font-bold text-3xl md:text-4xl mb-4">
-            Mobile Änderungsschneiderei am Bodensee
-          </h1>
-          <a href="tel:+4917681085285" class="text-yellow-400 text-xl font-semibold mb-4 inline-block">
-            <span style="color:red;">☎</span> +49 176 81085285
-          </a>
-          <p class="text-white text-lg md:text-xl">
-            Wir kommen zu Ihnen – Änderungen, Reparaturen & Maßanfertigungen vor Ort
-          </p>
-          <a href="mailto:sattlerei.lisovaya@gmail.com"
-             class="text-yellow-400 font-bold text-lg mt-4 inline-block">
-             info@schneidereibodensee.de
-          </a>
-          <p class="text-white text-lg mt-2">
-            Reichenaustraße 81c, 78467 Konstanz
-          </p>
+<!-- Hero (statischer Hintergrund) -->
+<section class="relative" style="height:80vh">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('images/slider_01.webp')"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="text-center p-8 rounded-lg">
+            <h1 class="text-white font-bold text-3xl md:text-4xl mb-4">Mobile Änderungsschneiderei am Bodensee</h1>
+            <a href="tel:+4917681085285" class="text-yellow-400 text-xl font-semibold block mb-4">☎ +49 176 81085285</a>
+            <p class="text-white text-lg md:text-xl">Wir kommen zu Ihnen – Änderungen, Reparaturen &amp; Maßanfertigungen vor Ort</p>
+            <a href="mailto:sattlerei.lisovaya@gmail.com" class="text-yellow-400 font-bold text-lg mt-4 block">sattlerei.lisovaya@gmail.com</a>
+            <p class="text-white text-lg mt-2">Reichenaustraße 81c · 78467 Konstanz</p>
         </div>
-      </div>
     </div>
-
-    <!-- Slide 2 -->
-    <input class="carousel-open" type="radio" id="carousel-2" name="carousel" hidden>
-    <div class="carousel-item absolute opacity-0" style="height:80vh;">
-      <div class="flex items-center justify-center h-full w-full bg-cover bg-center"
-           style="background-image:url('https://schneidereibodensee.de/images/slider_02.jpg');">
-        <div class="bg-black bg-opacity-50 p-8 rounded-lg text-center">
-          <h1 class="text-white font-bold text-2xl md:text-3xl">
-            Maßarbeit & Design<br/>
-            Kleider, Anzüge, Heimtextilien
-          </h1>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</section>
 
 <!-- Leistungen -->
-<section id="leistungen" class="bg-white py-12">
-  <div class="container mx-auto px-6">
-    <h2 class="text-gray-900 font-bold text-3xl mb-8 text-center">Leistungen</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Änderung -->
-      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
-        <div class="flex items-center mb-4">
-          <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-6-6l2-2a2 2 0 012.828 0L20 12" />
-          </svg>
-          <h3 class="text-xl font-semibold text-gray-800">Änderungen</h3>
+<section id="leistungen" class="bg-white py-8">
+    <div class="container mx-auto px-6">
+        <h2 class="text-gray-900 font-bold text-3xl mb-6 text-center">Leistungen</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Änderung -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-6-6l2-2a2 2 0 012.828 0L20 12"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-gray-800">Änderungen</h3>
+                </div>
+                <p class="text-gray-700">Kleider, Hosen, Jacken, Röcke … schnelle &amp; saubere Anpassungen.</p>
+            </div>
+
+            <!-- Maßanfertigung -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 21V8a2 2 0 012-2h2a2 2 0 012 2v13"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-gray-800">Maßanfertigungen</h3>
+                </div>
+                <p class="text-gray-700">Von Business-Anzug bis Abendkleid – Einzelstücke perfekt nach Maß.</p>
+            </div>
+
+            <!-- Mobiler Service -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4L21 7"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-gray-800">Mobiler Vor-Ort-Service</h3>
+                </div>
+                <p class="text-gray-700">Abholen – Ändern – Liefern: bequem bei Ihnen zuhause oder im Büro.</p>
+            </div>
+
+            <!-- Reparaturen -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-1.5a3 3 0 11-4.242 4.242L5 21l-3-3 7.536-7.536a3 3 0 014.242-4.242z"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-gray-800">Reparaturen</h3>
+                </div>
+                <p class="text-gray-700">Reißverschlüsse, Futter, Knöpfe &amp; mehr fachgerecht erneuert.</p>
+            </div>
+
+            <!-- Heimtextilien -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-gray-800">Gardinen &amp; Dekostoffe</h3>
+                </div>
+                <p class="text-gray-700">Vorhänge kürzen/nähen, Kissen &amp; Deko nach Wunsch.</p>
+            </div>
+
+            <!-- Lederarbeiten -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10M7 12h4m1 9l-5-5 5-5"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-gray-800">Lederarbeiten</h3>
+                </div>
+                <p class="text-gray-700">Jacken, Taschen &amp; Motorradkleidung passgenau repariert.</p>
+            </div>
         </div>
-        <p class="text-gray-700">Schnelle Änderungen an Kleidern, Hosen, Röcken, Jacken …</p>
-      </div>
-      <!-- Maßanfertigung -->
-      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
-        <div class="flex items-center mb-4">
-          <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9 21V8a2 2 0 012-2h2a2 2 0 012 2v13" />
-          </svg>
-          <h3 class="text-xl font-semibold text-gray-800">Maßanfertigungen</h3>
-        </div>
-        <p class="text-gray-700">Einzelstücke nach Maß – von Business-Anzug bis Abendkleid.</p>
-      </div>
-      <!-- Mobiler Service -->
-      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
-        <div class="flex items-center mb-4">
-          <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 17l6-6 4 4L21 7" />
-          </svg>
-          <h3 class="text-xl font-semibold text-gray-800">Mobiler Vor-Ort-Service</h3>
-        </div>
-        <p class="text-gray-700">Wir holen, ändern und liefern – bequem bei Ihnen zuhause oder im Büro.</p>
-      </div>
-      <!-- Reparaturen -->
-      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
-        <div class="flex items-center mb-4">
-          <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M15.232 5.232l3.536 3.536m-2.036-1.5a3 3 0 11-4.242 4.242L5 21l-3-3 7.536-7.536a3 3 0 014.242-4.242z" />
-          </svg>
-          <h3 class="text-xl font-semibold text-gray-800">Reparaturen</h3>
-        </div>
-        <p class="text-gray-700">Reißverschlüsse, Futter, Knöpfe – fachgerecht erneuert.</p>
-      </div>
-      <!-- Heimtextilien -->
-      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
-        <div class="flex items-center mb-4">
-          <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 7h18M3 12h18M3 17h18" />
-          </svg>
-          <h3 class="text-xl font-semibold text-gray-800">Gardinen & Dekostoffe</h3>
-        </div>
-        <p class="text-gray-700">Vorhänge kürzen / nähen, Kissen & Deko nach Wunsch.</p>
-      </div>
-      <!-- Lederarbeiten -->
-      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg">
-        <div class="flex items-center mb-4">
-          <svg class="h-8 w-8 text-yellow-500 mr-4" xmlns="http://www.w3.org/2000/svg"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M7 7h10M7 12h4m1 9l-5-5 5-5" />
-          </svg>
-          <h3 class="text-xl font-semibold text-gray-800">Lederarbeiten</h3>
-        </div>
-        <p class="text-gray-700">Lederjacken, Taschen & Motorradkleidung passgenau repariert.</p>
-      </div>
     </div>
-  </div>
 </section>
 
 <!-- Galerie -->
-<section id="galerie" class="bg-white py-12">
-  <div class="container mx-auto">
-    <h2 class="text-gray-900 font-bold text-3xl mb-8 text-center">Galerie</h2>
-    <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <!-- example images – replace with your own -->
-      <div class="bg-gray-100 p-2">
-        <img data-index="0" src="https://schneidereibodensee.de/images/galerie_01.jpg"
-             alt="Kleideränderung" class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer"
-             onclick="toggleModal(this)" />
-      </div>
-      <div class="bg-gray-100 p-2">
-        <img data-index="1" src="https://schneidereibodensee.de/images/galerie_02.jpg"
-             alt="Maßgeschneiderter Anzug" class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer"
-             onclick="toggleModal(this)" />
-      </div>
-      <div class="bg-gray-100 p-2">
-        <img data-index="2" src="https://schneidereibodensee.de/images/galerie_03.jpg"
-             alt="Gardinen nach Maß" class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer"
-             onclick="toggleModal(this)" />
-      </div>
-      <div class="bg-gray-100 p-2">
-        <img data-index="3" src="https://schneidereibodensee.de/images/galerie_04.jpg"
-             alt="Mobile Nähstation" class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer"
-             onclick="toggleModal(this)" />
-      </div>
+<section id="galerie" class="bg-white py-8">
+    <div class="container mx-auto">
+        <h2 class="text-gray-900 font-bold text-3xl mb-6 text-center">Galerie</h2>
+        <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-gray-100 p-2"><img data-index="0" src="images/gallery_fabric_roll_darkgreen.webp" alt="Anzugstoff auf Rolle" class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer" onclick="toggleModal(this)"></div>
+            <div class="bg-gray-100 p-2"><img data-index="1" src="images/gallery_totebag_orange_street.webp" alt="Orange Baumwolltasche"     class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer" onclick="toggleModal(this)"></div>
+            <div class="bg-gray-100 p-2"><img data-index="2" src="images/gallery_sofa_chenille_upholstery.webp" alt="Chenille Sofa Polsterarbeit" class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer" onclick="toggleModal(this)"></div>
+            <div class="bg-gray-100 p-2"><img data-index="3" src="images/gallery_patch_embroidery_machine.webp" alt="Stickerei auf Jeanspatch"  class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer" onclick="toggleModal(this)"></div>
+            <div class="bg-gray-100 p-2"><img data-index="4" src="images/gallery_linen_collar_stitch_macro.webp" alt="Sauberer Stich an Leinenkragen" class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer" onclick="toggleModal(this)"></div>
+            <div class="bg-gray-100 p-2"><img data-index="5" src="images/gallery_cushion_corner_stitch.webp" alt="Feiner Keder an Kissen"      class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer" onclick="toggleModal(this)"></div>
+            <div class="bg-gray-100 p-2"><img data-index="6" src="images/gallery_leather_bags_collection.webp" alt="Handgefertigte Ledertaschen" class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer" onclick="toggleModal(this)"></div>
+            <div class="bg-gray-100 p-2"><img data-index="7" src="images/gallery_leather_sewing_closeup.webp" alt="Nähen von Ledernaht"         class="hover:grow hover:shadow-lg w-full h-64 object-cover cursor-pointer" onclick="toggleModal(this)"></div>
+        </div>
     </div>
-  </div>
 
-  <!-- Modal -->
-  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden">
-    <span class="absolute top-0 right-0 p-4 text-white text-2xl cursor-pointer" onclick="closeModal()">&times;</span>
-    <div class="modal-arrow left"  onclick="prevImage()">&#10094;</div>
-    <img id="modalImage" class="max-w-full max-h-full cursor-pointer" alt="Galeriebild" onclick="closeModal()" />
-    <div class="modal-arrow right" onclick="nextImage()">&#10095;</div>
-  </div>
+    <!-- Bild-Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden">
+        <span class="absolute top-0 right-0 p-4 text-white text-2xl cursor-pointer" onclick="closeModal()">×</span>
+        <div class="modal-arrow left" onclick="prevImage()">❮</div>
+        <img id="modalImage" class="max-w-full max-h-full cursor-pointer" alt="">
+        <div class="modal-arrow right" onclick="nextImage()">❯</div>
+    </div>
 </section>
 
-<!-- Kontakt & Map -->
+<!-- Kontakt -->
 <section id="kontakt" class="bg-white py-12">
-  <div class="container mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:space-x-8">
-      <!-- Image -->
-      <div class="w-full md:w-1/2 mb-8 md:mb-0">
-        <img src="https://schneidereibodensee.de/images/team.jpg"
-             alt="Schneiderei Bodensee Team" class="hover:grow hover:shadow-lg w-full h-auto cursor-pointer object-cover"
-             onclick="toggleModal(this)" data-index="0" />
-      </div>
-      <!-- Map + Info -->
-      <div class="w-full md:w-1/2">
-        <div class="map-responsive">
-          <iframe title="Google Maps" loading="lazy"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d85912.95164965824!2d8.963385918057037!3d47.708113655929516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479af731e99596e3%3A0x89c4e456f9a28e9!2sSchneiderei%20Bodensee!5e0!3m2!1sde!2sde!4v1724853707339"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:space-x-8">
+            <!-- Bild -->
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                <img src="images/team.jpg" alt="Schneiderei Bodensee Team" class="hover:grow hover:shadow-lg w-full h-auto object-cover cursor-pointer" onclick="toggleModal(this)" data-index="6">
+            </div>
+            <!-- Map + Info -->
+            <div class="w-full md:w-1/2">
+                <div class="map-responsive">
+                    <iframe title="Google Maps" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d85912.95164965824!2d8.963385918057037!3d47.708113655929516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479af731e99596e3%3A0x89c4e456f9a28e9!2sSchneiderei%20Bodensee!5e0!3m2!1sde!2sde!4v1724853707339" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
 
-        <div class="mt-8 text-center md:text-left">
-          <h2 class="text-gray-900 font-bold text-3xl mb-4">Kontakt</h2>
-          <p class="text-gray-700 mb-1"><strong>Inh. Yulia Lisovaya</strong></p>
-          <p class="text-gray-700 mb-1">
-            <a href="mailto:info@schneidereibodensee.de" class="text-blue-500">info@schneidereibodensee.de</a>
-          </p>
-          <p class="text-gray-700 mb-1">Reichenaustraße 81c, 78467 Konstanz</p>
-          <p class="text-gray-700">
-            <a href="tel:+4917681085285" class="text-blue-500">+49 176 81085285</a>
-          </p>
+                <div class="mt-8 text-center md:text-left">
+                    <h2 class="text-gray-900 font-bold text-3xl mb-4">Kontakt</h2>
+                    <p class="text-gray-700 mb-2"><strong>Inh. Yulia Lisovaya</strong></p>
+                    <p class="text-gray-700 mb-2"><a href="mailto:sattlerei.lisovaya@gmail.com" class="text-blue-500">sattlerei.lisovaya@gmail.com</a></p>
+                    <p class="text-gray-700 mb-2">Reichenaustraße 81c, 78467 Konstanz</p>
+                    <p class="text-gray-700"><a href="tel:+4917681085285" class="text-blue-500">+49 176 81085285</a></p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <!-- WhatsApp Button -->
-<a href="https://wa.me/4917681085285"
-   class="fixed bottom-5 right-5 bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg"
-   aria-label="WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="currentColor">
-    <path d="M16 2.094c-7.73 0-14 6.27-14 14 0 2.478.648 4.822 1.782 6.88L2 30l7.297-1.755A13.914 13.914 0 0016 30.906c7.73 0 14-6.27 14-14s-6.27-14-14-14zm0 1.812c6.723 0 12.188 5.465 12.188 12.188 0 6.723-5.465 12.188-12.188 12.188-2.309 0-4.472-.64-6.338-1.758l-.445-.27-4.34 1.045 1.117-4.274-.29-.464A12.148 12.148 0 013.813 16c0-6.723 5.465-12.188 12.188-12.188zm-2.168 4.719a4.65 4.65 0 00-2.04.99c-.486.648-1.29 1.727-1.29 4.13 0 2.403 1.545 4.73 1.76 5.058.215.328 2.545 4.06 6.262 5.538 3.09 1.208 3.72.97 4.385.91.665-.058 2.186-.89 2.494-1.748a4.656 4.656 0 00.217-1.748c-.093-.15-.342-.245-.715-.428-.373-.183-2.186-1.078-2.527-1.198a1.058 1.058 0 00-.837.186c-.248.37-.965 1.198-1.184 1.447-.218.25-.434.28-.808.093-.374-.186-1.57-.578-2.993-1.844-1.107-.986-1.852-2.206-2.068-2.58a1.047 1.047 0 01.162-.743c.165-.163.372-.43.558-.65.185-.216.248-.37.372-.618.124-.25.062-.465-.03-.65-.093-.186-.808-1.93-1.13-2.724a4.665 4.665 0 00-.838-.75z"/>
-  </svg>
+<a href="https://wa.me/4917681085285" class="fixed bottom-5 right-5 bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg z-50" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="currentColor">
+        <path d="M16 2.094c-7.73 0-14 6.27-14 14 0 2.478.648 4.822 1.782 6.88L2 30l7.297-1.755A13.914 13.914 0 0016 30.906c7.73 0 14-6.27 14-14s-6.27-14-14-14zm0 1.812c6.723 0 12.188 5.465 12.188 12.188 0 6.723-5.465 12.188-12.188 12.188-2.309 0-4.472-.64-6.338-1.758l-.445-.27-4.34 1.045 1.117-4.274-.29-.464A12.148 12.148 0 013.813 16c0-6.723 5.465-12.188 12.188-12.188zm-2.168 4.719a4.65 4.65 0 00-2.04.99c-.486.648-1.29 1.727-1.29 4.13 0 2.403 1.545 4.73 1.76 5.058.215.328 2.545 4.06 6.262 5.538 3.09 1.208 3.72.97 4.385.91.665-.058 2.186-.89 2.494-1.748a4.656 4.656 0 00.217-1.748c-.093-.15-.342-.245-.715-.428-.373-.183-2.186-1.078-2.527-1.198a1.058 1.058 0 00-.837.186c-.248.37-.965 1.198-1.184 1.447-.218.25-.434.28-.808.093-.374-.186-1.57-.578-2.993-1.844-1.107-.986-1.852-2.206-2.068-2.58a1.047 1.047 0 01.162-.743c.165-.163.372-.43.558-.65.185-.216.248-.37.372-.618.124-.25.062-.465-.03-.65-.093-.186-.808-1.93-1.13-2.724a4.665 4.665 0 00-.838-.75z"/>
+    </svg>
 </a>
 
 <!-- Über uns -->
-<section id="ueber-uns" class="bg-white py-12">
-  <div class="container mx-auto px-6">
-    <h2 class="text-gray-800 font-bold text-2xl mb-8">Über uns</h2>
-    <p class="mb-6">
-      Schneiderei Bodensee ist Ihre mobile und stationäre Änderungsschneiderei in Konstanz.
-      Mit über 15 Jahren Erfahrung verbinden wir traditionelle Handwerkskunst mit modernem
-      Service. Wir holen Ihre Textilien ab, ändern oder fertigen neu und liefern
-      bequem zu Ihnen nach Hause – auch in die nahegelegene Schweiz.
-    </p>
-    <p>
-      Ob feine Abendgarderobe, Business-Outfits, Heimtextilien oder Premium-Lederarbeiten:
-      Wir erfüllen Ihre Wünsche präzise, schnell und zuverlässig. Probieren Sie uns aus!
-    </p>
-  </div>
+<section id="ueber-uns" class="bg-white py-8">
+    <div class="container mx-auto px-6">
+        <h2 class="uppercase font-bold text-gray-800 text-2xl mb-8">Über uns</h2>
+        <p class="mb-8">Schneiderei Bodensee ist Ihre mobile und stationäre Änderungsschneiderei in Konstanz. Mit über 15 Jahren Erfahrung verbinden wir traditionelle Handwerkskunst mit modernem Service. Wir holen Ihre Textilien ab, ändern oder fertigen neu und liefern bequem zu Ihnen nach Hause – auch in die nahegelegene Schweiz.</p>
+        <p>Ob feine Abendgarderobe, Business-Outfits, Heimtextilien oder Premium-Lederarbeiten: Wir erfüllen Ihre Wünsche präzise, schnell und zuverlässig. Probieren Sie uns aus!</p>
+    </div>
 </section>
+
 <!-- Footer -->
 <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
     <div class="container flex flex-wrap px-3 py-8">
-        <!-- About Us and Keywords -->
+        <!-- Textblock -->
         <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
-            <h3 class="text-center lg:text-left font-bold text-gray-900 mb-4">Polsterei &amp; Sattlerei in Konstanz am Bodensee</h3>
-            <p class="text-gray-700 leading-relaxed text-center lg:text-left">
-                Polsterei Bodensee ist Ihre erfahrene <strong>Polsterei</strong> und <strong>Sattlerei</strong> in <strong>Konstanz</strong> am <strong>Bodensee</strong>. Wir bieten professionelle <strong>Möbelpolsterungen</strong>, <strong>Bootspolster</strong>, <strong>Autosattlerei</strong> und individuelle <strong>Maßanfertigungen</strong>. Kontaktieren Sie uns für <strong>Polsterreparaturen</strong> und wenn Sie Ihre <strong>Möbel neu beziehen</strong> möchten.
-            </p>
-
-            <p class="text-gray-600 leading-relaxed text-center lg:text-left mt-4">
-                Unsere Dienstleistungen umfassen: Polsterei Konstanz, Möbelpolsterung Bodensee, Polsterreinigung Konstanz, Möbelrestauration Konstanz, Polstermöbel reparieren Bodensee, Sofa neu beziehen Konstanz, Möbelaufbereitung Bodensee, Ledermöbel reparieren Konstanz, Möbelrestaurierung Bodensee, Antike Möbel restaurieren Konstanz, Möbelaufarbeitung Bodensee, Polstermöbel neu beziehen Bodensee, Individuelle Möbelanfertigung Bodensee, Polsterarbeiten Bodensee, Möbelpolsterer Konstanz, Sessel neu beziehen Bodensee, Möbelreparatur Konstanz, Polsterei Kreuzlingen, Möbelrestauration Thalwil, Polsterarbeiten Arbon, Möbelreparatur Romanshorn, Polsterei Stein am Rhein, Möbelpflege Bodensee, Möbelpflege und -reparatur Bodensee, Ledermöbelaufarbeitung Konstanz, Möbelpolsterer Bodensee, Nachhaltige Möbelrestauration Bodensee, Möbelhaus Sitdown, Möbelbezüge, Gutes Möbelstück, Möbelstücken, Vielseitige Möbelauswahl, Trendiges Stoff-Sofa, Möbel, Reparaturen, Reparatur.
-            </p>
+            <h3 class="font-bold text-gray-900 mb-4 text-center lg:text-left">Änderungsschneiderei &amp; Maßanfertigungen am Bodensee</h3>
+            <p class="text-gray-700 leading-relaxed text-center lg:text-left">Schneiderei Bodensee bietet professionelle Änderungen, Maßanfertigungen, Heimtextilien-Service und Lederreparaturen in Konstanz und Umgebung. Mobiler Service inklusive Abholung &amp; Lieferung.</p>
         </div>
 
-        <!-- Navigation Links -->
+        <!-- Menü -->
         <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-end">
             <div class="w-full flex flex-col items-center lg:items-end py-4">
                 <a href="#leistungen" class="text-gray-600 hover:text-gray-900 mb-2">Leistungen</a>
@@ -374,52 +283,36 @@
                 <a href="https://polstereibodensee.de/datenschutz.html" class="text-gray-600 hover:text-gray-900 mb-2">Datenschutz</a>
                 <a href="https://polstereibodensee.de/impressum.html" class="text-gray-600 hover:text-gray-900">Impressum</a>
             </div>
-
-            <!-- Social Media Section -->
+            <!-- Social Media -->
             <div class="w-full flex justify-center lg:justify-end items-center py-4">
-                <!-- Instagram Icon -->
-                <a href="https://www.instagram.com/yulia_lisovaya/" class="mx-2" target="_blank"
-                   rel="noopener noreferrer" aria-label="Instagram">
-                    <svg class="w-6 h-6 fill-current text-gray-600 hover:text-gray-900" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"></path>
-                    </svg>
+                <a href="https://www.instagram.com/yulia_lisovaya/" class="mx-2" target="_blank" aria-label="Instagram">
+                    <svg class="w-6 h-6 fill-current text-gray-600 hover:text-gray-900" viewBox="0 0 24 24"><path d="M12 0c-3.26 0-3.667.015-4.947.072-1.278.06-2.148.261-2.913.558-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14c-.297.765-.498 1.636-.558 2.913C.015 8.333 0 8.74 0 12c0 3.26.015 3.667.072 4.947.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.765.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.012 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.078-1.335 1.384-2.126.296-.765.497-1.636.558-2.913C23.988 15.667 24 15.26 24 12s-.015-3.667-.072-4.947c-.06-1.277-.262-2.148-.558-2.913-.306-.789-.718-1.459-1.384-2.126C20.65.935 19.98.524 19.19.218c-.765-.297-1.636-.498-2.913-.558C15.667.015 15.26 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.164a3.999 3.999 0 110-8 3.999 3.999 0 010 8zm7.846-10.405a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
                 </a>
-
-                <!-- Facebook Icon -->
-                <a href="https://www.facebook.com/julia.lisovaya.3" class="mx-2" target="_blank"
-                   rel="noopener noreferrer" aria-label="Facebook">
-                    <svg class="w-6 h-6 fill-current text-gray-600 hover:text-gray-900" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43
-                                 c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.516c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 
-                                 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
-                    </svg>
+                <a href="https://www.facebook.com/julia.lisovaya.3" class="mx-2" target="_blank" aria-label="Facebook">
+                    <svg class="w-6 h-6 fill-current text-gray-600 hover:text-gray-900" viewBox="0 0 24 24"><path d="M24 12.073C24 5.373 18.627 0 12 0S0 5.373 0 12.073c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.006 1.792-4.669 4.533-4.669 1.312 0 2.686.234 2.686.234v2.953h-1.516c-1.49 0-1.956.926-1.956 1.875v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.063 24 12.073z"/></svg>
                 </a>
             </div>
         </div>
     </div>
 </footer>
-  
-<!-- Modal Scripts -->
+
+<!-- Cookie Consent -->
+<div id="cookieConsent">
+    Diese Website verwendet Cookies, um die Benutzerfreundlichkeit zu verbessern.
+    <button onclick="document.getElementById('cookieConsent').style.display='none'">OK</button>
+</div>
+
+<!-- Modal & Gallery Script -->
 <script>
 let currentIndex=0,images=[];
-document.addEventListener('DOMContentLoaded',()=>{images=[...document.querySelectorAll('#gallery img')]});
-
-function openModal(img){const modal=document.getElementById('imageModal'),
-modalImg=document.getElementById('modalImage');currentIndex=parseInt(img.dataset.index);
-modalImg.src=img.src;modal.classList.remove('hidden');document.addEventListener('keydown',handleKey);}
-function closeModal(){document.getElementById('imageModal').classList.add('hidden');
-document.removeEventListener('keydown',handleKey);}
-function handleKey(e){if(e.key==='Escape')closeModal();else if(e.key==='ArrowRight')nextImage();
-else if(e.key==='ArrowLeft')prevImage();}
-function nextImage(){currentIndex=(currentIndex+1)%images.length;
-document.getElementById('modalImage').src=images[currentIndex].src;}
-function prevImage(){currentIndex=(currentIndex-1+images.length)%images.length;
-document.getElementById('modalImage').src=images[currentIndex].src;}
-function toggleModal(img){const modal=document.getElementById('imageModal');
-modal.classList.contains('hidden')?openModal(img):closeModal();}
-document.getElementById('imageModal').addEventListener('click',e=>{
-if(e.target===e.currentTarget||e.target.id==='modalImage')closeModal();});
+document.addEventListener('DOMContentLoaded',()=>{images=[...document.querySelectorAll('#gallery img')];setTimeout(()=>{document.getElementById('cookieConsent').style.display='block'},2000);});
+function openModal(img){const m=document.getElementById('imageModal'),mi=document.getElementById('modalImage');currentIndex=parseInt(img.dataset.index);mi.src=img.src;m.classList.remove('hidden');document.addEventListener('keydown',keys);}
+function closeModal(){document.getElementById('imageModal').classList.add('hidden');document.removeEventListener('keydown',keys);}
+function keys(e){if(e.key==='Escape')closeModal();if(e.key==='ArrowRight')nextImage();if(e.key==='ArrowLeft')prevImage();}
+function nextImage(){currentIndex=(currentIndex+1)%images.length;document.getElementById('modalImage').src=images[currentIndex].src;}
+function prevImage(){currentIndex=(currentIndex-1+images.length)%images.length;document.getElementById('modalImage').src=images[currentIndex].src;}
+function toggleModal(img){document.getElementById('imageModal').classList.contains('hidden')?openModal(img):closeModal();}
+document.getElementById('imageModal').addEventListener('click',e=>{if(e.target===e.currentTarget||e.target.id==='modalImage')closeModal()});
 </script>
-
 </body>
 </html>
