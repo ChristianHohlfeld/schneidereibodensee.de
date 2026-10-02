@@ -1,0 +1,28 @@
+# Schneiderei Bodensee
+
+> https://schneidereibodensee.de
+
+## Purpose
+Öffentliche Website der Änderungsschneiderei & Maßanfertigungen in Konstanz. Sprache: de. Mobiler Vor-Ort-Service.
+
+## Offer
+- Änderungsarbeiten
+- Reparaturen
+- Maßanfertigungen
+- Mobiler Service (Haus / Büro)
+
+## NAP
+- Name: Yulia Lisovaya · Schneiderei Bodensee
+- Adresse: Reichenaustraße 81c, 78467 Konstanz
+- Telefon: +49 176 81085285
+- E-Mail: yulia@sattlereibodensee.de
+
+## Key URLs
+- Start: https://schneidereibodensee.de/
+- Impressum: https://schneidereibodensee.de/impressum.html
+- Datenschutz: https://schneidereibodensee.de/datenschutz.html
+- Sitemap: https://schneidereibodensee.de/sitemap.xml
+- robots.txt: https://schneidereibodensee.de/robots.txt
+
+## Boundaries
+Kein MCP und keine Agent-API auf dieser Domain. Öffentliche Marketingseiten nur.
